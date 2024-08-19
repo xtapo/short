@@ -1,6 +1,6 @@
 ## Giới thiệu
 
-Một công cụ rút gọn liên kết sử dụng Cloudflare Pages.
+Một công cụ rút gọn liên kết sử dụng Cloudflare Pages và D1 SQL Database.
 
 *Demo*: [https://go.bibica.net/](https://go.bibica.net/)
 
