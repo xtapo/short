@@ -12,7 +12,7 @@ Một công cụ rút gọn liên kết sử dụng Cloudflare Pages.
 4. Chọn kho lưu trữ dự án bạn đã tạo, trong phần `Set up builds and deployments`, giữ tất cả các tùy chọn mặc định.
 5. Nhấn `Save and Deploy`, sau một thời gian ngắn, trang web của bạn sẽ được triển khai.
 6. Tạo cơ sở dữ liệu D1 tham khảo [tại đây](https://github.com/x-dr/telegraph-Image/blob/main/docs/manage.md).
-7. Thực hiện lệnh SQL để tạo bảng (đi tới tab Console, dán các câu lệnh dưới vào hộp đầu vào của bảng điều khiển và Execute):
+7. Thực hiện lệnh SQL để tạo bảng (đi tới tab `Console`, dán các câu lệnh dưới vào hộp đầu vào của bảng điều khiển và `Execute`):
 
     ```sql
     DROP TABLE IF EXISTS links;
