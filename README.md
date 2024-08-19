@@ -48,15 +48,18 @@ Một công cụ rút gọn liên kết sử dụng Cloudflare Pages.
 
 ```bash
 # POST /create
-curl -X POST -H "Content-Type: application/json" -d '{"url":"https://131213.xyz"}' https://go.bibica.net/create
+curl -X POST -H "Content-Type: application/json" -d '{"url":"https://go.bibica.net"}' https://go.bibica.net/create
+```
+> Nó sẽ tạo ngẫu nhiên các slug
 
-# Chỉ định slug
-curl -X POST -H "Content-Type: application/json" -d '{"url":"https://131213.xyz","slug":"scxs"}' https://go.bibica.net/create
+#### Chỉ định slug
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"url":"https://dash.cloudflare.com/","slug":"dash-cloudflare"}' https://go.bibica.net/create
 ```
 > Phản hồi:
 ```json
 {
   "slug": "<slug>",
-  "link": "http://go.bibica.net/<slug>"
+  "link": "http://go.bibica.net/dash-cloudflare"
 }
 ```
