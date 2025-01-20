@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="asset/img/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rút gọn liên kết</title>
+    <title>Link Shortener</title>
     <style>
         :root {
             --color-primary: #5c7cfa;
@@ -202,15 +202,15 @@
     <header><h1>GO.XTAPO.ORG</h1></header>
     <main x-data="app" x-cloak>
         <p x-show.transition.opacity="alert" :class="alert?.type" x-text="alert?.message"></p>
-        <input placeholder="Nhập liên kết cần rút gọn..." x-model="url" x-ref="url" />
+        <input placeholder="Enter the link to shorten..." x-model="url" x-ref="url" />
         <details>
-            <summary>Cài đặt tùy chỉnh</summary>
+            <summary>Custom Settings</summary>
             <div>
                 <input placeholder="slug" x-model="slug" />
-               <br> <small>Slug rút gọn tùy chỉnh mặc định được tạo ngẫu nhiên.</small>
+               <br> <small>The default custom shortened slug is generated randomly.</small>
             </div>
         </details>
-        <button :class="{ loading }" :disabled="loading || isValidated()" @click="submit($refs, $nextTick)">Tạo liên kết</button>
+        <button :class="{ loading }" :disabled="loading || isValidated()" @click="submit($refs, $nextTick)">Create Link</button>
     </main>
     <footer>
         <p>Powered by <a href="https://github.com/x-dr/short" target="_blank">short</a> &amp; <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a></p>
@@ -227,12 +227,12 @@
             },
             submit ($refs, $nextTick) {
                 if (!this.url) {
-                    this.alert = { type: 'error', message: 'Thiếu tham số cần thiết: url.' }
+                    this.alert = { type: 'error', message: 'Missing required parameter: url.' }
                     return
                 }
 
                 if (this.isValidated()) {
-                    this.alert = { type: 'error', message: 'Định dạng không hợp lệ: url.' }
+                    this.alert = { type: 'error', message: 'Invalid format: url.' }
                     return
                 }
 
@@ -259,7 +259,7 @@
 
                     $nextTick(() => {
                         $refs.url.select()
-                        this.alert = { type: 'success', message: `Liên kết ${document.execCommand('Copy') ? 'đã sao chép' : 'đã tạo'} ` }
+                        this.alert = { type: 'success', message: `The link has been ${document.execCommand('Copy') ? 'copied' : 'created'} ` }
                     })
                 })
                 .catch(e => {
